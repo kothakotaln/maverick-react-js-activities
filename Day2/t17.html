@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .purpleColor {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id='root'></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type = 'text/babel'>
+        function dateFormatter() {
+            let time = new Date();
+            return time.toLocaleDateString();
+        }
+        function formatName(user) {
+            return user.firstName + ' ' +user.lastName;
+        }
+        function Hello() {
+            let profile = {firstName:"Dhoni", lastName:"CSK"};
+            let imageURL = "https://www.bing.com/images/search?view=detailV2&ccid=8rHVVbFM&id=4EB00407EEF9BC79D84F90772203ADB74CE7251D&thid=OIP.8rHVVbFMazhHL4e6QgRj3AHaEo&mediaurl=https%3a%2f%2fwww.punekarnews.in%2fwp-content%2fuploads%2f2020%2f07%2fMS-Dhoni.jpg&exph=640&expw=1024&q=MS+Dhoni&simid=608052281494888002&FORM=IRPRST&ck=4CC53F4FE83C123EC77A786F22F31085&selectedIndex=3&ajaxhist=0&ajaxserp=0";
+            return (<div>
+                <img src = {imageURL} width = "200" height = "200"></img>
+                <h2>Hello {formatName(profile)}</h2>
+                <h3>Today Date : {dateFormatter()}</h3>
+            </div>) 
+        }
+        function App() {
+            return (<div>
+                <h1 className = 'purpleColor'>Welcome to named componet</h1>
+                <Hello />
+            </div>)
+        }   
+         ReactDOM.render(<App></App>, document.getElementById('root'));
+        </script>
+</body>
+</html>

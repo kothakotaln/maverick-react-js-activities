@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let items = [11,23,28,19,6,17];
+        document.write(`<p>Find 4 is present: ${items.includes(4)}</p>`)
+        let emp = {id:102026, name:"Siva"};
+        let empValues = Object.values(emp);
+        document.write(`<p>emp values : ${empValues}</p>`)
+        let empEntries = Object.entries(emp);
+        document.write(`<p>emp entries : ${empEntries}</p>`)
+        for(let [k,v] of empEntries) {
+            document.write(`<p>property = ${k} , value = ${v}</p>`)
+        }
+        </script>
+</body>
+</html>
